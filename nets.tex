@@ -1,0 +1,141 @@
+\documentclass[12pt]{article}
+\input{nets.sty}
+
+\title{Nets}
+\author{Austin Gill}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+	We have already seen that sequences are ``adequate'' to detect limit points, continuous functions, and compact sets in metrizable spaces. There is a generalization of the notion of a sequence, called a \textit{net}, that will do the same for an arbitrary topological space.
+\end{abstract}
+
+\section{Directed Sets}
+\begin{defn}
+	A relation $\preceq$ on a set $A$ is called a \textbf{partial order} relation if the following conditions hold:
+	\begin{enumerate}
+		\item $\alpha \preceq \alpha$ for all $\alpha \in A$.
+		\item If $\alpha \preceq \beta$ and $\beta \preceq \alpha$, then $\alpha = \beta$.
+		\item If $\alpha \preceq \beta$ and $\beta \preceq \gamma$, then $\alpha \preceq \gamma$.
+	\end{enumerate}
+\end{defn}
+
+\begin{defn}
+	A \textbf{directed set} $J$ is a set with a partial order $\preceq$ such that for each pair $\alpha, \beta$ of elements of $J$, there exists an element $\gamma \in J$ with the property that $\alpha \preceq \gamma$ and $\beta \preceq \gamma$.
+\end{defn}
+Show the following are directed sets.
+
+\begin{enumerate}
+	\item Any simply ordered set under the relation $\leq$.
+	\item The collection of all subsets of a set $S$, partially ordered by inclusion. That is, $A \preceq B$ if $A \subset B$.
+	\item The collection $\mathscr A$\todo{What's the right font for this?}{} of subsets of $S$ that is closed under finite intersections, partially ordered by reverse inclusion. That is, $A \preceq B$ if $B \subset A$.
+	\item The collection of all closed subsets of a space $X$, partially ordered by inclusion.
+\end{enumerate}
+
+\begin{proof}
+	\todo{Prove these.}
+\end{proof}
+\begin{proof}
+\end{proof}
+\begin{proof}
+\end{proof}
+\begin{proof}
+\end{proof}
+
+\section{Cofinal Sets}
+\begin{defn}
+	A subset $K \subset J$ is said to be \textbf{cofinal} in $J$ if for each $\alpha \in J$, there exists a $\beta \in K$ such that $\alpha \preceq \beta$.
+\end{defn}
+
+Show that if $J$ is directed, and $K$ is cofinal in $J$, then $K$ is directed.
+
+\begin{proof}
+	\todo{Prove.}
+\end{proof}
+
+\section{Nets and Convergence}
+\begin{defn}
+	Let $X$ be a topological space. A \textbf{net} in $X$ is a function $f$ from a directed set $J$ into $X$. If $\alpha \in J$, we usually denote $f(\alpha)$ by $x_\alpha$. We denote the net $f$ itself by ${\left(x_\alpha\right)}_{\alpha \in J}$, or simply $(x_\alpha)$ if $J$ is understood.
+\end{defn}
+\begin{defn}
+	The net $(x_\alpha)$ is said to \textbf{converge} to a point $x \in X$, denoted by $x_\alpha \to x$ if for each neighborhood $U$ of $x$, there exists an $\alpha \in J$ such that
+	\[\alpha \preceq \beta \Longrightarrow x_\beta \in U\]
+\end{defn}
+
+Show that these definitions are equivalent to those of a sequence and the convergence of a sequence when $J = \Z_+$
+
+\begin{proof}
+	\todo{Prove net $\sim$ sequence}
+\end{proof}
+\begin{proof}
+	\todo{Prove net convergence $\sim$ sequence convergence}
+\end{proof}
+
+\section{Convergence in a Product Space}
+Suppose that $(x_\alpha)$ converges to $x$ in $X$ and $(y_\alpha)$ converges to $y$ in $Y$. Show that $(x_\alpha \times y_\alpha)$ converges to $x \times y$ in $X \times Y$.
+\begin{proof}
+	\todo{Prove.}
+\end{proof}
+
+\section{Convergence in a Hausdorff Space}
+Show that if $X$ is Hausdorff, a net in $X$ converges to at most one point.
+\begin{proof}
+	\todo{I smell contradiction.}
+\end{proof}
+
+\section{Closure of a Set}
+\begin{thm}
+	Let $A \in X$\todo{Is this a typo? Should it read ``Let $A \subset X$''?}{}. Then $x \in \overline A$ if and only if there is a net of points of $A$ converging to $x$.
+\end{thm}
+\begin{proof}
+	\todo{To prove $\Rightarrow$, take as index set $J$ the collection of all neighborhoods of $x$, ordered by reverse inclusion.}
+\end{proof}
+
+\section{Continuity}
+\begin{thm}
+	Let $f: X \to Y$. Then $f$ is continuous if and only if for every convergent net $(x_\alpha)$ in $X$ converging to a pooint $x$, the net $\big(f(a_\alpha)\big)$ converges to $f(x)$.
+\end{thm}
+\begin{proof}
+	\todo{Prove.}
+\end{proof}
+
+\section{Subnets}
+\begin{defn}
+	Let $f: J \to X$ be a net in $X$; let $f(\alpha) = x_\alpha$. If $K$ is a directed set and $g:K \to J$ is a function such that
+	\begin{enumerate}
+		\item $i \preceq j \Rightarrow g(i) \preceq g(j)$
+		\item $g(K)$ is cofinal in $J$
+	\end{enumerate}
+	then the composite function $f \circ g : K \to X$ is called a \textbf{subnet} if $(x_\alpha)$.
+\end{defn}
+
+Show that if the net $(x_\alpha)$ converges to $x$, so does any subnet of $(x_\alpha)$.
+\begin{proof}
+	\todo{Prove.}
+\end{proof}
+
+\section{Accumulation Points}
+\begin{defn}
+	Let ${(x_\alpha)}_{\alpha\in J}$ be a a net in $X$. We say that $x$ is an \textbf{accumulation point} of the net if for each neighborhood $U$ of $x$, the set of $\alpha$ for which $x_\alpha \in U$ is cofinal in $J$.
+\end{defn}
+
+\begin{lemma}
+	The net $(x_\alpha)$ has the point $x$ as an accumulation point if and only if some subnet of $(x_\alpha)$ converges to $x$.
+\end{lemma}
+\begin{proof}
+	\todo{To prove $\Rightarrow$, let $K$ be the set of all pairs $(\alpha, U)$ where $\alpha \in J$ and $U$ is a neighborhood of $x$ containing $x_\alpha$. Define $(\alpha, U) \preceq (\beta, V)$ if $\alpha \preceq \beta$ and $V \subset U$. Show that $K$ is directed and use it to define the subnet.}
+\end{proof}
+
+\section{Compactness}
+\begin{thm}
+	$X$ is compact if and only if every net in $X$ has a convergent subnet.
+\end{thm}
+\begin{proof}
+	\todo{To prove $\Rightarrow$, let $B_\alpha = \{x_\beta
+			\mid \alpha \preceq \beta \}$ and show that $\{B_\alpha \}$ has the finite intersection property.
+
+		To prove $\Leftarrow$, let $\mathscr A$ be a collection of closed sets having the finite intersection property, and let $\mathscr B$ be the collection of all finite intersections of elements of $\mathscr A$, partially ordered by reverse inclusion.}
+\end{proof}
+
+\end{document}
