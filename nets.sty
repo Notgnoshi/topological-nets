@@ -1,7 +1,5 @@
 % !TEX root = nets.tex
 
-\usepackage{algorithm}
-\usepackage{algpseudocode}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
@@ -55,21 +53,7 @@
 \setlength{\marginparwidth}{1.80in}
 \reversemarginpar{}
 
-% All I want is to have comment italicized, but I cant figure out how
-% to properly modify the existing \Comment macro.
-% \algrenewcomment[1]{\hfill\eqparbox{COMMENT}{\textit{// #1}}}
-\algnewcommand{\IComment}[1]{\Comment{\textit{#1}}}
-
 \graphicspath{{./figures/}}
-
-% Make \paragraph{}s end with newlines and no indents
-\titleformat{\paragraph}
-    {\normalfont\bfseries}
-    {}
-    {0pt}
-    {}
-% Make \paragraph{}s not have a space between the title and the text
-\titlespacing*{\paragraph}{0pt}{1ex}{-\parskip}
 
 % Document Definitions
 
@@ -87,28 +71,16 @@
 \theoremstyle{definition}
 \newtheorem{defn}[thm]{Definition}
 
-
-\theoremstyle{remark}
-\newtheorem*{remark}{Remark}
-
+% Add spaces around theorems and definitions.
 \makeatletter
 \def\thm@space@setup{%
 %   \thm@preskip=5cm plus 1cm minus 2cm
   \thm@preskip=\parskip
-  \thm@postskip=\thm@preskip % or whatever, if you don't want them to be equal
+  \thm@postskip=\thm@preskip
 }
 \makeatother
 
-% \newtheoremstyle{definition}% name of the style to be used
-%   {10pt} % measure of space to leave above the theorem. E.g.: 3pt
-%   {10pt} % measure of space to leave below the theorem. E.g.: 3pt
-%   {}     % name of font to use in the body of the theorem
-%   {}     % measure of space to indent
-%   {\bf}  % name of head font
-%   {:}    % punctuation between head and body
-%   { }    % space after theorem head; " " = normal interword space
-%   {\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}} % Manually specify head
-
+% Heh, I'm so clever.
 \renewcommand{\qedsymbol}{$\skull$}
 
 % An inline TODO command. Doesn't play nicely with \todotableofcontents
