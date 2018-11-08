@@ -28,20 +28,48 @@ Show the following are directed sets.
 
 \begin{enumerate}
 	\item Any simply ordered set under the relation $\leq$.
-	\item The collection of all subsets of a set $S$, partially ordered by inclusion. That is, $A \preceq B$ if $A \subset B$.
-	\item The collection $\mathscr A$\todo{What's the right font for this?}{} of subsets of $S$ that is closed under finite intersections, partially ordered by reverse inclusion. That is, $A \preceq B$ if $B \subset A$.
-	\item The collection of all closed subsets of a space $X$, partially ordered by inclusion.
-\end{enumerate}
+	      \todoinline{I am confused by the wording ``Any simply ordered set, under the relation $\leq$, is directed.''. I \textit{think} it means ``Any simply ordered set with order relation $<$ is directed under the relation $\leq$.'' This means I need to show that $\leq$ is a partial ordering in addition to showing the existence of a $c \in J$ with $a \leq c$ and $b \leq c$ for every $a, b \in J$.}
+	      \begin{proof}
+		      Let $A$ be a simply ordered set with order relation $<$. Show that the set $A$ is directed under the relation $\leq$.
 
-\begin{proof}
-	\todo{Prove these.}
-\end{proof}
-\begin{proof}
-\end{proof}
-\begin{proof}
-\end{proof}
-\begin{proof}
-\end{proof}
+		      We need to show that
+		      \begin{enumerate}
+			      \item\label{pf:part-order} $A$ is partially ordered by $\leq$.
+
+			            Let $a, b, c \in A$.
+			            \begin{enumerate}
+				            \item $a \leq a$ is trivially true, because $a = a$!
+				            \item Let $a \leq b$ and $b \leq a$. Because $A$ is simply ordered, $a < b$ and $b < a$ cannot hold, so the only other possibility is that $a = b$.
+				            \item Let $a \leq b$ and $b \leq c$. Then proceed by cases.
+				                  \begin{itemize}
+					                  \item[case $a < b$ and $b < c$:] Then $a < c$ (and thus $a \leq c$) because $A$ is simply ordered.
+					                  \item[case $a = b$ and $b = c$:] Then $a = c$ (and thus $a \leq c$).
+					                  \item[case $a = b$ and $b < c$:] Then $a < c$ (and thus $a \leq c$).
+					                  \item[case $a < b$ and $b = c$:] Then $a < c$ (and thus $a \leq c$).
+				                  \end{itemize}
+			            \end{enumerate}
+			            So therefore $A$ is partially ordered by $\leq$.
+			      \item\label{pf:part-directed} For every $a, b \in A$ there exists a $c \in A$ such that $a \leq c$ and $b \leq c$.
+
+			            let $a, b \in A$. We wish to show that there exists a $c \in A$ with $a \leq c$ and $b \leq c$.
+
+			            $A$ is simply ordered, so either $a < b$ or $b < a$. Without loss of generality, let $a < b$. But from (\ref{pf:part-order}) $A$ is partially ordered by $\leq$, so we have $b \leq b$!
+		      \end{enumerate}
+		      Then $\leq$ is a partial ordering on $A$ and for every pair $a, b \in A$ we have either $a \leq b$ and $b \leq b$, or we have $b \leq a$ and $a \leq a$! Thus $A$ is directed.
+	      \end{proof}
+
+	\item The collection of all subsets of a set $S$, partially ordered by inclusion. That is, $A \preceq B$ if $A \subset B$.
+	      \begin{proof}
+	      \end{proof}
+
+	\item The collection $\mathcal A$ of subsets of $S$ that is closed under finite intersections, partially ordered by reverse inclusion. That is, $A \preceq B$ if $B \subset A$.
+	      \begin{proof}
+	      \end{proof}
+
+	\item The collection of all closed subsets of a space $X$, partially ordered by inclusion.
+	      \begin{proof}
+	      \end{proof}
+\end{enumerate}
 
 \section{Cofinal Sets}
 \begin{defn}
@@ -135,7 +163,7 @@ Show that if the net $(x_\alpha)$ converges to $x$, so does any subnet of $(x_\a
 	\todo{To prove $\Rightarrow$, let $B_\alpha = \{x_\beta
 			\mid \alpha \preceq \beta \}$ and show that $\{B_\alpha \}$ has the finite intersection property.
 
-		To prove $\Leftarrow$, let $\mathscr A$ be a collection of closed sets having the finite intersection property, and let $\mathscr B$ be the collection of all finite intersections of elements of $\mathscr A$, partially ordered by reverse inclusion.}
+		To prove $\Leftarrow$, let $\mathcal A$ be a collection of closed sets having the finite intersection property, and let $\mathcal B$ be the collection of all finite intersections of elements of $\mathcal A$, partially ordered by reverse inclusion.}
 \end{proof}
 
 \end{document}
