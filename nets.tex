@@ -8,162 +8,169 @@
 \maketitle
 
 \begin{abstract}
-	We have already seen that sequences are ``adequate'' to detect limit points, continuous functions, and compact sets in metrizable spaces. There is a generalization of the notion of a sequence, called a \textit{net}, that will do the same for an arbitrary topological space.
+    We have already seen that sequences are ``adequate'' to detect limit points, continuous functions, and compact sets in metrizable spaces. There is a generalization of the notion of a sequence, called a \textit{net}, that will do the same for an arbitrary topological space.
 \end{abstract}
 
 \section{Directed Sets}
 \begin{defn}
-	A relation $\preceq$ on a set $A$ is called a \textbf{partial order} relation if the following conditions hold:
-	\begin{enumerate}
-		\item $\alpha \preceq \alpha$ for all $\alpha \in A$.
-		\item If $\alpha \preceq \beta$ and $\beta \preceq \alpha$, then $\alpha = \beta$.
-		\item If $\alpha \preceq \beta$ and $\beta \preceq \gamma$, then $\alpha \preceq \gamma$.
-	\end{enumerate}
+    A relation $\preceq$ on a set $A$ is called a \textbf{partial order} relation if the following conditions hold:
+    \begin{enumerate}
+        \item $\alpha \preceq \alpha$ for all $\alpha \in A$.
+        \item If $\alpha \preceq \beta$ and $\beta \preceq \alpha$, then $\alpha = \beta$.
+        \item If $\alpha \preceq \beta$ and $\beta \preceq \gamma$, then $\alpha \preceq \gamma$.
+    \end{enumerate}
 \end{defn}
 
 \begin{defn}
-	A \textbf{directed set} $J$ is a set with a partial order $\preceq$ such that for each pair $\alpha, \beta$ of elements of $J$, there exists an element $\gamma \in J$ with the property that $\alpha \preceq \gamma$ and $\beta \preceq \gamma$.
+    A \textbf{directed set} $J$ is a set with a partial order $\preceq$ such that for each pair $\alpha, \beta$ of elements of $J$, there exists an element $\gamma \in J$ with the property that $\alpha \preceq \gamma$ and $\beta \preceq \gamma$.
 \end{defn}
 Show the following are directed sets.
 
 \begin{enumerate}
-	\item Any simply ordered set under the relation $\leq$.
-	      \todoinline{I am confused by the wording ``Any simply ordered set, under the relation $\leq$, is directed.''. I \textit{think} it means ``Any simply ordered set with order relation $<$ is directed under the relation $\leq$.'' This means I need to show that $\leq$ is a partial ordering in addition to showing the existence of a $c \in J$ with $a \leq c$ and $b \leq c$ for every $a, b \in J$.}
-	      \begin{proof}
-		      Let $A$ be a simply ordered set with order relation $<$. Show that the set $A$ is directed under the relation $\leq$.
+    \item Any simply ordered set under the relation $\leq$.
+          \todoinline{I am confused by the wording ``Any simply ordered set, under the relation $\leq$, is directed.''. I \textit{think} it means ``Any simply ordered set with order relation $<$ is directed under the relation $\leq$.'' This means I need to show that $\leq$ is a partial ordering in addition to showing the existence of a $c \in J$ with $a \leq c$ and $b \leq c$ for every $a, b \in J$.}
+          \begin{proof}
+              Let $A$ be a simply ordered set with order relation $<$. Show that the set $A$ is directed under the relation $\leq$.
 
-		      We need to show that
-		      \begin{enumerate}
-			      \item\label{pf:part-order} $A$ is partially ordered by $\leq$.
+              We need to show that
+              \begin{enumerate}
+                  \item\label{pf:part-order} $A$ is partially ordered by $\leq$.
 
-			            Let $a, b, c \in A$.
-			            \begin{enumerate}
-				            \item $a \leq a$ is trivially true, because $a = a$!
-				            \item Let $a \leq b$ and $b \leq a$. Because $A$ is simply ordered, $a < b$ and $b < a$ cannot hold, so the only other possibility is that $a = b$.
-				            \item Let $a \leq b$ and $b \leq c$. Then proceed by cases.
-				                  \begin{itemize}
-					                  \item[case $a < b$ and $b < c$:] Then $a < c$ (and thus $a \leq c$) because $A$ is simply ordered.
-					                  \item[case $a = b$ and $b = c$:] Then $a = c$ (and thus $a \leq c$).
-					                  \item[case $a = b$ and $b < c$:] Then $a < c$ (and thus $a \leq c$).
-					                  \item[case $a < b$ and $b = c$:] Then $a < c$ (and thus $a \leq c$).
-				                  \end{itemize}
-			            \end{enumerate}
-			            So therefore $A$ is partially ordered by $\leq$.
-			      \item\label{pf:part-directed} For every $a, b \in A$ there exists a $c \in A$ such that $a \leq c$ and $b \leq c$.
+                        Let $a, b, c \in A$.
+                        \begin{enumerate}
+                            \item $a \leq a$ is trivially true, because $a = a$!
+                            \item Let $a \leq b$ and $b \leq a$. Because $A$ is simply ordered, $a < b$ and $b < a$ cannot hold, so the only other possibility is that $a = b$.
+                            \item Let $a \leq b$ and $b \leq c$. Then proceed by cases.
+                                  \begin{itemize}
+                                      \item[case $a < b$ and $b < c$:] Then $a < c$ (and thus $a \leq c$) because $A$ is simply ordered.
+                                      \item[case $a = b$ and $b = c$:] Then $a = c$ (and thus $a \leq c$).
+                                      \item[case $a = b$ and $b < c$:] Then $a < c$ (and thus $a \leq c$).
+                                      \item[case $a < b$ and $b = c$:] Then $a < c$ (and thus $a \leq c$).
+                                  \end{itemize}
+                        \end{enumerate}
+                        So therefore $A$ is partially ordered by $\leq$.
+                  \item\label{pf:part-directed} For every $a, b \in A$ there exists a $c \in A$ such that $a \leq c$ and $b \leq c$.
 
-			            let $a, b \in A$. We wish to show that there exists a $c \in A$ with $a \leq c$ and $b \leq c$.
+                        let $a, b \in A$. We wish to show that there exists a $c \in A$ with $a \leq c$ and $b \leq c$.
 
-			            $A$ is simply ordered, so either $a < b$ or $b < a$. Without loss of generality, let $a < b$. But from (\ref{pf:part-order}) $A$ is partially ordered by $\leq$, so we have $b \leq b$!
-		      \end{enumerate}
-		      Then $\leq$ is a partial ordering on $A$ and for every pair $a, b \in A$ we have either $a \leq b$ and $b \leq b$, or we have $b \leq a$ and $a \leq a$! Thus $A$ is directed.
-	      \end{proof}
+                        $A$ is simply ordered, so either $a < b$ or $b < a$. Without loss of generality, let $a < b$. But from (\ref{pf:part-order}) $A$ is partially ordered by $\leq$, so we have $b \leq b$!
+              \end{enumerate}
+              Then $\leq$ is a partial ordering on $A$ and for every pair $a, b \in A$ we have either $a \leq b$ and $b \leq b$, or we have $b \leq a$ and $a \leq a$! Thus $A$ is directed.
+          \end{proof}
 
-	\item The collection of all subsets of a set $S$, partially ordered by inclusion. That is, $A \preceq B$ if $A \subset B$.
-	      \begin{proof}
-	      \end{proof}
+    \item The collection of all subsets of a set $S$, partially ordered by inclusion. That is, $A \preceq B$ if $A \subset B$.
+          \begin{proof}
+            Let $A, B, C \subset S$. Then clearly we have
+            \begin{enumerate}
+                \item $A \subset A$
+                \item Suppose $A \subset B$ and $B \subset A$. Then $A = B$ by the definition of set equality.
+                \item Suppose $A \subset B$ and $B \subset C$, then $A \subset C$.
+            \end{enumerate}
+            So then $\subset$ is a partial order on the powerset of $S$.
+          \end{proof}
 
-	\item The collection $\mathcal A$ of subsets of $S$ that is closed under finite intersections, partially ordered by reverse inclusion. That is, $A \preceq B$ if $B \subset A$.
-	      \begin{proof}
-	      \end{proof}
+    \item The collection $\mathcal A$ of subsets of $S$ that is closed under finite intersections, partially ordered by reverse inclusion. That is, $A \preceq B$ if $B \subset A$.
+          \begin{proof}
+          \end{proof}
 
-	\item The collection of all closed subsets of a space $X$, partially ordered by inclusion.
-	      \begin{proof}
-	      \end{proof}
+    \item The collection of all closed subsets of a space $X$, partially ordered by inclusion.
+          \begin{proof}
+          \end{proof}
 \end{enumerate}
 
 \section{Cofinal Sets}
 \begin{defn}
-	A subset $K \subset J$ is said to be \textbf{cofinal} in $J$ if for each $\alpha \in J$, there exists a $\beta \in K$ such that $\alpha \preceq \beta$.
+    A subset $K \subset J$ is said to be \textbf{cofinal} in $J$ if for each $\alpha \in J$, there exists a $\beta \in K$ such that $\alpha \preceq \beta$.
 \end{defn}
 
 Show that if $J$ is directed, and $K$ is cofinal in $J$, then $K$ is directed.
 
 \begin{proof}
-	\todo{Prove.}
+    \todo{Prove.}
 \end{proof}
 
 \section{Nets and Convergence}
 \begin{defn}
-	Let $X$ be a topological space. A \textbf{net} in $X$ is a function $f$ from a directed set $J$ into $X$. If $\alpha \in J$, we usually denote $f(\alpha)$ by $x_\alpha$. We denote the net $f$ itself by ${\left(x_\alpha\right)}_{\alpha \in J}$, or simply $(x_\alpha)$ if $J$ is understood.
+    Let $X$ be a topological space. A \textbf{net} in $X$ is a function $f$ from a directed set $J$ into $X$. If $\alpha \in J$, we usually denote $f(\alpha)$ by $x_\alpha$. We denote the net $f$ itself by ${\left(x_\alpha\right)}_{\alpha \in J}$, or simply $(x_\alpha)$ if $J$ is understood.
 \end{defn}
 \begin{defn}
-	The net $(x_\alpha)$ is said to \textbf{converge} to a point $x \in X$, denoted by $x_\alpha \to x$ if for each neighborhood $U$ of $x$, there exists an $\alpha \in J$ such that
-	\[\alpha \preceq \beta \Longrightarrow x_\beta \in U\]
+    The net $(x_\alpha)$ is said to \textbf{converge} to a point $x \in X$, denoted by $x_\alpha \to x$ if for each neighborhood $U$ of $x$, there exists an $\alpha \in J$ such that
+    \[\alpha \preceq \beta \Longrightarrow x_\beta \in U\]
 \end{defn}
 
 Show that these definitions are equivalent to those of a sequence and the convergence of a sequence when $J = \Z_+$
 
 \begin{proof}
-	\todo{Prove net $\sim$ sequence}
+    \todo{Prove net $\sim$ sequence}
 \end{proof}
 \begin{proof}
-	\todo{Prove net convergence $\sim$ sequence convergence}
+    \todo{Prove net convergence $\sim$ sequence convergence}
 \end{proof}
 
 \section{Convergence in a Product Space}
 Suppose that $(x_\alpha)$ converges to $x$ in $X$ and $(y_\alpha)$ converges to $y$ in $Y$. Show that $(x_\alpha \times y_\alpha)$ converges to $x \times y$ in $X \times Y$.
 \begin{proof}
-	\todo{Prove.}
+    \todo{Prove.}
 \end{proof}
 
 \section{Convergence in a Hausdorff Space}
 Show that if $X$ is Hausdorff, a net in $X$ converges to at most one point.
 \begin{proof}
-	\todo{I smell contradiction.}
+    \todo{I smell contradiction.}
 \end{proof}
 
 \section{Closure of a Set}
 \begin{thm}
-	Let $A \in X$\todo{Is this a typo? Should it read ``Let $A \subset X$''?}{}. Then $x \in \overline A$ if and only if there is a net of points of $A$ converging to $x$.
+    Let $A \in X$\todo{Is this a typo? Should it read ``Let $A \subset X$''?}{}. Then $x \in \overline A$ if and only if there is a net of points of $A$ converging to $x$.
 \end{thm}
 \begin{proof}
-	\todo{To prove $\Rightarrow$, take as index set $J$ the collection of all neighborhoods of $x$, ordered by reverse inclusion.}
+    \todo{To prove $\Rightarrow$, take as index set $J$ the collection of all neighborhoods of $x$, ordered by reverse inclusion.}
 \end{proof}
 
 \section{Continuity}
 \begin{thm}
-	Let $f: X \to Y$. Then $f$ is continuous if and only if for every convergent net $(x_\alpha)$ in $X$ converging to a point $x$, the net $\big(f(a_\alpha)\big)$ converges to $f(x)$.
+    Let $f: X \to Y$. Then $f$ is continuous if and only if for every convergent net $(x_\alpha)$ in $X$ converging to a point $x$, the net $\big(f(a_\alpha)\big)$ converges to $f(x)$.
 \end{thm}
 \begin{proof}
-	\todo{Prove.}
+    \todo{Prove.}
 \end{proof}
 
 \section{Subnets}
 \begin{defn}
-	Let $f: J \to X$ be a net in $X$; let $f(\alpha) = x_\alpha$. If $K$ is a directed set and $g:K \to J$ is a function such that
-	\begin{enumerate}
-		\item $i \preceq j \Rightarrow g(i) \preceq g(j)$
-		\item $g(K)$ is cofinal in $J$
-	\end{enumerate}
-	then the composite function $f \circ g : K \to X$ is called a \textbf{subnet} if $(x_\alpha)$.
+    Let $f: J \to X$ be a net in $X$; let $f(\alpha) = x_\alpha$. If $K$ is a directed set and $g:K \to J$ is a function such that
+    \begin{enumerate}
+        \item $i \preceq j \Rightarrow g(i) \preceq g(j)$
+        \item $g(K)$ is cofinal in $J$
+    \end{enumerate}
+    then the composite function $f \circ g : K \to X$ is called a \textbf{subnet} if $(x_\alpha)$.
 \end{defn}
 
 Show that if the net $(x_\alpha)$ converges to $x$, so does any subnet of $(x_\alpha)$.
 \begin{proof}
-	\todo{Prove.}
+    \todo{Prove.}
 \end{proof}
 
 \section{Accumulation Points}
 \begin{defn}
-	Let ${(x_\alpha)}_{\alpha\in J}$ be a a net in $X$. We say that $x$ is an \textbf{accumulation point} of the net if for each neighborhood $U$ of $x$, the set of $\alpha$ for which $x_\alpha \in U$ is cofinal in $J$.
+    Let ${(x_\alpha)}_{\alpha\in J}$ be a a net in $X$. We say that $x$ is an \textbf{accumulation point} of the net if for each neighborhood $U$ of $x$, the set of $\alpha$ for which $x_\alpha \in U$ is cofinal in $J$.
 \end{defn}
 
 \begin{lemma}
-	The net $(x_\alpha)$ has the point $x$ as an accumulation point if and only if some subnet of $(x_\alpha)$ converges to $x$.
+    The net $(x_\alpha)$ has the point $x$ as an accumulation point if and only if some subnet of $(x_\alpha)$ converges to $x$.
 \end{lemma}
 \begin{proof}
-	\todo{To prove $\Rightarrow$, let $K$ be the set of all pairs $(\alpha, U)$ where $\alpha \in J$ and $U$ is a neighborhood of $x$ containing $x_\alpha$. Define $(\alpha, U) \preceq (\beta, V)$ if $\alpha \preceq \beta$ and $V \subset U$. Show that $K$ is directed and use it to define the subnet.}
+    \todo{To prove $\Rightarrow$, let $K$ be the set of all pairs $(\alpha, U)$ where $\alpha \in J$ and $U$ is a neighborhood of $x$ containing $x_\alpha$. Define $(\alpha, U) \preceq (\beta, V)$ if $\alpha \preceq \beta$ and $V \subset U$. Show that $K$ is directed and use it to define the subnet.}
 \end{proof}
 
 \section{Compactness}
 \begin{thm}
-	$X$ is compact if and only if every net in $X$ has a convergent subnet.
+    $X$ is compact if and only if every net in $X$ has a convergent subnet.
 \end{thm}
 \begin{proof}
-	\todo{To prove $\Rightarrow$, let $B_\alpha = \{x_\beta
-			\mid \alpha \preceq \beta \}$ and show that $\{B_\alpha \}$ has the finite intersection property.
+    \todo{To prove $\Rightarrow$, let $B_\alpha = \{x_\beta
+            \mid \alpha \preceq \beta \}$ and show that $\{B_\alpha \}$ has the finite intersection property.
 
-		To prove $\Leftarrow$, let $\mathcal A$ be a collection of closed sets having the finite intersection property, and let $\mathcal B$ be the collection of all finite intersections of elements of $\mathcal A$, partially ordered by reverse inclusion.}
+        To prove $\Leftarrow$, let $\mathcal A$ be a collection of closed sets having the finite intersection property, and let $\mathcal B$ be the collection of all finite intersections of elements of $\mathcal A$, partially ordered by reverse inclusion.}
 \end{proof}
 
 \end{document}
