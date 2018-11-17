@@ -28,7 +28,6 @@ Show the following are directed sets.
 
 \begin{enumerate}
     \item Any simply ordered set under the relation $\leq$.
-          \todoinline{I am confused by the wording ``Any simply ordered set, under the relation $\leq$, is directed.''. I \textit{think} it means ``Any simply ordered set with order relation $<$ is directed under the relation $\leq$.'' This means I need to show that $\leq$ is a partial ordering in addition to showing the existence of a $c \in J$ with $a \leq c$ and $b \leq c$ for every $a, b \in J$.}
           \begin{proof}
               Let $A$ be a simply ordered set with order relation $<$. Show that the set $A$ is directed under the relation $\leq$.
 
@@ -60,17 +59,25 @@ Show the following are directed sets.
 
     \item The collection of all subsets of a set $S$, partially ordered by inclusion. That is, $A \preceq B$ if $A \subset B$.
           \begin{proof}
-            Let $A, B, C \subset S$. Then clearly we have
-            \begin{enumerate}
-                \item $A \subset A$
-                \item Suppose $A \subset B$ and $B \subset A$. Then $A = B$ by the definition of set equality.
-                \item Suppose $A \subset B$ and $B \subset C$, then $A \subset C$.
-            \end{enumerate}
-            So then $\subset$ is a partial order on the powerset of $S$.
+              Let $A, B, C \subset S$.
+              \begin{enumerate}
+                  \item Clearly, $A \subset A$.
+                  \item Suppose $A \subset B$ and $B \subset A$. Then $A = B$ by the definition of set equality.
+                  \item Suppose $A \subset B$ and $B \subset C$, then $A \subset C$.
+              \end{enumerate}
+              So then $\subset$ is a partial order on the powerset of $S$.
           \end{proof}
 
-    \item The collection $\mathcal A$ of subsets of $S$ that is closed under finite intersections, partially ordered by reverse inclusion. That is, $A \preceq B$ if $B \subset A$.
+    \item The collection $\mathcal A$ of subsets of $S$ that is closed under finite intersections, partially ordered by reverse inclusion. That is, $A \preceq B$ if $A \supset B$.
           \begin{proof}
+              Let $\mathcal A$ be a collection of subsets of a set $S$ that is closed under finite intersections. That is, if $A_1, \dots, A_n \in \mathcal A$, then $\bigcap_{i = 1}^n A_i \in \mathcal A$. Suppose $A, B, C \in \mathcal A$.\todo{I don't see how to use the hypothesis that $\mathcal A$ is closed under finite intersections.}
+
+              \begin{enumerate}
+                  \item Clearly, $A \supset A$.
+                  \item Suppose $A \supset B$ and $B \supset A$. Then $A = B$ by the definition of set equality.
+                  \item Suppose $A \supset B$ and $B \supset C$. Then $C \subset B$ and $B \subset A$, so $C \subset A$, or rather, $A \supset C$.
+              \end{enumerate}
+              Thus $\supset$ is a partial ordering on $\mathcal A$.
           \end{proof}
 
     \item The collection of all closed subsets of a space $X$, partially ordered by inclusion.
