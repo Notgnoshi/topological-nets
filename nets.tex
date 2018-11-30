@@ -117,7 +117,8 @@ Show that if $J$ is directed, and $K$ is cofinal in $J$, then $K$ is directed.
     $\alpha \preceq \gamma$ and $\beta \preceq \gamma$.
 
     So let $\alpha, \beta \in K$. Since $K \subset J$, $\alpha, \beta \in J$. Since $J$ is
-    directed, there is a $c \in J$ with $\alpha, \beta \preceq c$. But $c \in J$ and $K$ is cofinal in
+    directed, there is a $c \in J$ with $\alpha, \beta \preceq c$. But $c \in J$ and $K$ is cofinal
+    in
     $J$, so there is a $\gamma \in K$ with $c \preceq \gamma$. Since $\alpha, \beta \preceq c$ and
     $c \preceq \gamma$, we have that $\alpha, \beta \preceq \gamma$. That is, that $K$ is directed.
 \end{proof}
@@ -137,13 +138,31 @@ Show that if $J$ is directed, and $K$ is cofinal in $J$, then $K$ is directed.
 \end{defn}
 
 Show that these definitions are equivalent to those of a sequence and the convergence of a sequence
-when $J = \Z_+$
+when $J = \Z_+$.
+
+\begin{defn}
+    Given a set $X$, we define a \textbf{sequence} of elements of $X$ to be a function $\vec x :
+        \Z_+ \to X$.
+\end{defn}
+
+\begin{defn}
+    A sequence $(x_n)$ \textbf{converges} to a point $x \in X$ if for every neighborhood $U$ of
+    $x$, there is an $n^* \in \mathbb \Z_+$ such that $x_n \in U$ for all $n \geq n^*$.
+\end{defn}
 
 \begin{proof}
-    \todo{Prove net $\sim$ sequence}
+    Let $X$ be a topological space and $f : \Z_+ \to X$ be a net in $X$. Then clearly $f$ is a
+    sequence.
+
+    Let $X$ be a topological space and $\vec x : \Z_+ \to X$ be a sequence of elements of $X$. Then
+    clearly $\vec x$ is also a net.
 \end{proof}
 \begin{proof}
-    \todo{Prove net convergence $\sim$ sequence convergence}
+    Let $X$ be a topological space and let $f : \Z_+ \to X$ be a net that converges to $x \in X$.
+    That is, for every neighborhood $U$ of $x$, there exists an $n^* \in \Z_+$ such that
+    \[ n^* \preceq n \Longrightarrow x_n \in U \]
+    But the partial ordering $\preceq$ of $\Z_+$ is $\leq$, so this is precisely the definition of
+    sequence convergence.
 \end{proof}
 
 \section{Convergence in a Product Space}
