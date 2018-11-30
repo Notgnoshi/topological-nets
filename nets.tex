@@ -110,7 +110,16 @@ Show the following are directed sets.
 Show that if $J$ is directed, and $K$ is cofinal in $J$, then $K$ is directed.
 
 \begin{proof}
-    \todo{Prove.}
+    Let $J$ be directed and $K$ be a cofinal subset of $J$. Then for each $a, b \in J$
+    there exists a $c \in J$ with $a \preceq c$ and $b \preceq c$, and for each
+    $a \in J$ there exists a $\beta \in K$ such that $a \preceq \beta$. We wish
+    to show that for each $\alpha, \beta \in K$ there exists a $\gamma \in K$ with
+    $\alpha \preceq \gamma$ and $\beta \preceq \gamma$.
+
+    So let $\alpha, \beta \in K$. Since $K \subset J$, $\alpha, \beta \in J$. Since $J$ is
+    directed, there is a $c \in J$ with $\alpha, \beta \preceq c$. But $c \in J$ and $K$ is cofinal in
+    $J$, so there is a $\gamma \in K$ with $c \preceq \gamma$. Since $\alpha, \beta \preceq c$ and
+    $c \preceq \gamma$, we have that $\alpha, \beta \preceq \gamma$. That is, that $K$ is directed.
 \end{proof}
 
 \section{Nets and Convergence}
