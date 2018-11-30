@@ -70,13 +70,22 @@ Show the following are directed sets.
           \begin{proof}
               Let $A, B \in \mathcal P(S)$. We wish to show that $\mathcal P(S)$ is directed, that
               is, that there exists a $C \in \mathcal P(S)$ with $A \subset C$ and $B \subset C$.
+
+              Note that $S \in \mathcal P(S)$ and that $A \subset S$ and $B \subset S$. Thus
+              $\mathcal P(S)$ is a directed set under inclusion.
           \end{proof}
 
     \item The collection $\mathcal A$ of subsets of $S$ that is closed under finite intersections,
           partially ordered by reverse inclusion. That is, $A \preceq B$ if $A \supset B$.
           \begin{proof}
-              Let $A, B \in \mathcal A$. We wish to show that $\mathcal A$ is directed. That is,
-              that there exists a $C \in \mathcal A$ with $A \supset C$ and $B \supset C$.
+              Let $\mathcal A \subset \mathcal P(S)$ such that if $A_1, \dots, A_n \in \mathcal A$
+              then $\bigcap_{i=1}^n \in \mathcal A$, and let $A_1, A_2 \in \mathcal A$. We wish to
+              show that $\mathcal A$ is directed. That is, that there exists a $B \in \mathcal A$
+              with $A_1 \supset B$ and $A_2 \supset B$.
+
+              But we know $\mathcal A$ is closed under finite intersections, so
+              $A_1 \cap A_2 \in \mathcal A$. Moreover, we know that $A_1 \supset A_1 \cap A_2$ and
+              $A_2 \supset A_1 \cap A_2$. Thus $\mathcal A$ is directed.
           \end{proof}
 
     \item The collection of all closed subsets of a space $X$, partially ordered by inclusion.
