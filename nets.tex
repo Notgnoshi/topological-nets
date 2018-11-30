@@ -90,10 +90,14 @@ Show the following are directed sets.
 
     \item The collection of all closed subsets of a space $X$, partially ordered by inclusion.
           \begin{proof}
-              Let $\mathcal A$ be the collection of all closed subsets of a space $X$. Let $A, B
-                  \in \mathcal A$. We wish to show that $\mathcal A$ is directed. That is, that
-              there exists a $C \in
+              Let $\mathcal A$ be the collection of all closed subsets of a space $X$.
+              Let $A, B \in \mathcal A$, that is, let $A$ and $B$ be closed in $X$.
+              We wish to show that $\mathcal A$ is directed. That is, that there exists a $C \in
                   \mathcal A$ with $A \subset C$ and $B \subset C$.
+
+              Recall that finite unions of closed sets are closed, so $A \cup B$ is closed.
+              Moreover, note that $A \subset A \cup B$ and $B \subset A \cup B$.
+              Thus $\mathcal A$ is directed.
           \end{proof}
 \end{enumerate}
 
