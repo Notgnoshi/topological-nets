@@ -185,7 +185,18 @@ that $(x_\alpha \times y_\alpha)$ converges to $x \times y$ in $X \times Y$.
 \section{Convergence in a Hausdorff Space}
 Show that if $X$ is Hausdorff, a net in $X$ converges to at most one point.
 \begin{proof}
-    \todo{I smell contradiction.}
+    Let $X$ be a Hausdorff topological space, and let $(x_\alpha)$ be a net in $X$.
+
+    Suppose by way of contradiction that $(x_\alpha) \to x_0$ and $(x_\alpha) \to y_0$ with
+    $x_0 \neq y_0$. Since $X$ is Hausdorff, let $U$ and $V$ be disjoint neighborhoods of
+    $x_0$ and $y_0$ respectively. Then there exist some $\alpha, \beta \in J$ with
+    $x_i \in U$ and $x_j \in V$ for all $\alpha \preceq i$ and $\beta \preceq j$.
+
+    Since $J$ is directed, there is a $\gamma \in J$ for which $\gamma \preceq i$ implies both
+    $\alpha \preceq i$ and $\beta \preceq i$, so then $x_i \in U$ and $x_i \in V$. But this
+    contradicts the fact that $U$ and $V$ are disjoint.
+
+    Therefore $(x_\alpha)$ converges to at most one point of $X$.
 \end{proof}
 
 \section{Closure of a Set}
