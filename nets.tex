@@ -169,7 +169,17 @@ when $J = \Z_+$.
 Suppose that $(x_\alpha)$ converges to $x$ in $X$ and $(y_\alpha)$ converges to $y$ in $Y$. Show
 that $(x_\alpha \times y_\alpha)$ converges to $x \times y$ in $X \times Y$.
 \begin{proof}
-    \todo{Prove.}
+    Let $(x_\alpha) \to x$ in $X$ and $(y_\alpha) \to y$ in $Y$, and let $U \times V$ be a
+    neighborhood of $x \times y$ in $X \times Y$.
+
+    Since $(x_\alpha) \to x$ in $X$, there is an $\alpha \in J$, the index set, with $x_i \in U$
+    for all $\alpha \preceq i$. Likewise, since $(y_\alpha) \to y$ in $Y$, there is a $\beta \in J$
+    with $x_i \in V$ for all $\beta \preceq i$.
+
+    But $J$ is directed, so there is a $\gamma \in J$ with $\gamma \preceq i$ implying both
+    $\alpha \preceq i$ and $\beta \preceq i$. Then for all $\gamma \preceq i$, we have that
+    $x_i \times y_i \in U \times V$. Therefore $(x_\alpha \times y_\alpha) \to x \times y$
+    in $X \times Y$.
 \end{proof}
 
 \section{Convergence in a Hausdorff Space}
