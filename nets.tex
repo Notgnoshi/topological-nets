@@ -201,12 +201,17 @@ Show that if $X$ is Hausdorff, a net in $X$ converges to at most one point.
 
 \section{Closure of a Set}
 \begin{thm}
-    Let $A \in X$\todo{Is this a typo? Should it read ``Let $A \subset X$''?}{}. Then $x \in
-        \overline A$ if and only if there is a net of points of $A$ converging to $x$.
+    Let $A \subset X$. Then $x \in \overline A$ if and only if there is a net of points of $A$
+    converging to $x$.
 \end{thm}
 \begin{proof}
-    \todo{To prove $\Rightarrow$, take as index set $J$ the collection of all neighborhoods of $x$,
-        ordered by reverse inclusion.}
+    % Move the \item to the next line...
+    \ \vspace{-0.5cm}\newline
+    \begin{itemize}
+        \item[$\lbrack\Rightarrow\rbrack$]\todo{To prove $\Rightarrow$, take as index set $J$ the collection of all neighborhoods of $x$, ordered by reverse inclusion.} Let $A \subset X$ and suppose $x \in \overline A$. We wish to show that there is a net in $A$ that converges to $x$.7
+        \item[$\lbrack\Leftarrow\rbrack$] Let $(x_\alpha) \to x$ be a net in $A$ converging to $x$. We wish to show that $x \in \overline A$.
+    \end{itemize}
+
 \end{proof}
 
 \section{Continuity}
