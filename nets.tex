@@ -75,7 +75,8 @@ Show the following are directed sets.
               $\mathcal P(S)$ is a directed set under inclusion.
           \end{proof}
 
-    \item The collection $\mathcal A$ of subsets of $S$ that is closed under finite intersections,
+    \item\label{prob:1c} The collection $\mathcal A$ of subsets of $S$ that is closed under finite
+          intersections,
           partially ordered by reverse inclusion. That is, $A \preceq B$ if $A \supset B$.
           \begin{proof}
               Let $\mathcal A \subset \mathcal P(S)$ such that if $A_1, \dots, A_n \in \mathcal A$
@@ -208,8 +209,26 @@ Show that if $X$ is Hausdorff, a net in $X$ converges to at most one point.
     % Move the \item to the next line...
     \ \vspace{-0.5cm}\newline
     \begin{itemize}
-        \item[$\lbrack\Rightarrow\rbrack$]\todo{To prove $\Rightarrow$, take as index set $J$ the collection of all neighborhoods of $x$, ordered by reverse inclusion.} Let $A \subset X$ and suppose $x \in \overline A$. We wish to show that there is a net in $A$ that converges to $x$.7
-        \item[$\lbrack\Leftarrow\rbrack$] Let $(x_\alpha) \to x$ be a net in $A$ converging to $x$. We wish to show that $x \in \overline A$.
+        \item[$\lbrack\Rightarrow\rbrack$] Let $A \subset X$ and suppose $x \in \overline A$. We
+              wish to show that there is a net in $A$ that converges to $x$.
+
+              For the sheer hell of it, let $J$ be the collection of all neighborhoods of $x$,
+              partially ordered by reverse inclusion. Since $J$ is a collection of open
+              neighborhoods, it is closed under finite intersections. Then by problem 1.3 above,
+              $J$ is directed.
+
+              Since $x \in \overline A$, every $U \in J$ intersects $A$. So choose a point
+              $x_U \in U \cap A$ for every $U \in J$. Then we claim that $(x_U)$ is a net in
+              $A$ that converges to $x$.
+
+              So let\footnote{I believe\texttrademark{} that $U$ plays the role of
+                  both $U$ and $\alpha$ from the definition of net convergence. We can do this
+                  because it's both a neighborhood and an element of the index set.}
+              $U \in J$. Then for any $V \subset U$, or rather $U \supset V$, that is
+              $U \preceq V$, we have a $x_V \in V \subset U$. That is,
+              $U \preceq V \Rightarrow x_V \in U$. Thus $(x_U) \to x$.
+        \item[$\lbrack\Leftarrow\rbrack$] Let $(x_\alpha) \to x$ be a net in $A$ converging to $x$.
+              We wish to show that $x \in \overline A$.\todo{I think this direction should be easier.}{}
     \end{itemize}
 
 \end{proof}
