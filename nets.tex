@@ -228,9 +228,14 @@ Show that if $X$ is Hausdorff, a net in $X$ converges to at most one point.
               $U \preceq V$, we have a $x_V \in V \subset U$. That is,
               $U \preceq V \Rightarrow x_V \in U$. Thus $(x_U) \to x$.
         \item[$\lbrack\Leftarrow\rbrack$] Let $(x_\alpha) \to x$ be a net in $A$ converging to $x$.
-              We wish to show that $x \in \overline A$.\todo{I think this direction should be easier.}{}
-    \end{itemize}
+              We wish to show that $x \in \overline A$.
 
+              So then for every neighborhood $U$ of $x$, there exists an $\alpha \in J$ such that
+              if $\alpha \preceq \beta$, then $x_\beta \in U$. But $(x_\alpha)$ is a net of points
+              of $A$ and $\alpha \preceq \alpha$ for every $\alpha$, so $x_\alpha$ is in $A$ and
+              thus $x_\alpha \in U$. That is, for every neighborhood $U$ of $x$,
+              $U \cap A \neq \varnothing$. Thus $x \in \overline A$.
+    \end{itemize}
 \end{proof}
 
 \section{Continuity}
