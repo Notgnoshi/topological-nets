@@ -239,12 +239,33 @@ Show that if $X$ is Hausdorff, a net in $X$ converges to at most one point.
 \end{proof}
 
 \section{Continuity}
+\begin{defn}
+    A function $f : X \to Y$ is said to be \textbf{continuous} if for each open subset $V$ of $Y$,
+    the set $f^{-1}(V)$ is an open subset of $X$.
+\end{defn}
 \begin{thm}
     Let $f: X \to Y$. Then $f$ is continuous if and only if for every convergent net $(x_\alpha)$
-    in $X$ converging to a point $x$, the net $\big(f(a_\alpha)\big)$ converges to $f(x)$.
+    in $X$ converging to a point $x$, the net $\big(f(x_\alpha)\big)$ converges to $f(x)$.
 \end{thm}
 \begin{proof}
-    \todo{Prove.}
+    % Move the \item to the next line...
+    \ \vspace{-0.5cm}\newline
+    \begin{itemize}
+        \item[$\lbrack\Rightarrow\rbrack$] Let $f: X \to Y$ be a continuous function and suppose
+              $(x_\alpha) \to x$. We wish to show the net $\big(f(x_\alpha)\big) \to f(x)$, that
+              is, for every neighborhood $V$ of $f(x)$, there exists an $\alpha \in J$ such that
+              if $\alpha \preceq \beta$, then $f(x_\beta) \in V$.
+
+              So let $V \subset Y$ be a neighborhood of $f(x)$. Since $f$ is continuous, then the
+              preimage $f^{-1}(V)$ is open in $X$. But $(x_\alpha) \to x$, so for
+              neighborhood $U$ of $x$, there exists an $\alpha \in J$ such that if
+              $\alpha \preceq \beta$, then $x_\beta \in U$.
+
+              So then there exists an $\alpha \in J$ such that if $\alpha \preceq \beta$, then
+              $x_\beta \in f^{-1}(V)$ but if $x_\beta \in f^{-1}(V)$, then $f(x_\beta) \in V$.
+              Therefore $\big(f(x_\alpha)\big) \to f(x)$.
+        \item[$\lbrack\Leftarrow\rbrack$]
+    \end{itemize}
 \end{proof}
 
 \section{Subnets}
