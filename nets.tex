@@ -264,7 +264,12 @@ Show that if $X$ is Hausdorff, a net in $X$ converges to at most one point.
               So then there exists an $\alpha \in J$ such that if $\alpha \preceq \beta$, then
               $x_\beta \in f^{-1}(V)$ but if $x_\beta \in f^{-1}(V)$, then $f(x_\beta) \in V$.
               Therefore $\big(f(x_\alpha)\big) \to f(x)$.
-        \item[$\lbrack\Leftarrow\rbrack$]
+        \item[$\lbrack\Leftarrow\rbrack$] Let $f: X \to Y$ and suppose for every net $(x_\alpha)$
+              converging to $x$ the net $\big(f(x_\alpha)\big)$ converges to $f(x)$. We wish to
+              show that $f$ is continuous, that is, if $V \in Y$ is open, then $f^{-1}(V)$ is open
+              in $X$.
+
+              So let $V \in Y$ be open and suppose $(x_\alpha)$ is a net in $X$ converging to $x$.
     \end{itemize}
 \end{proof}
 
