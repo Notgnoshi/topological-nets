@@ -269,7 +269,15 @@ Show that if $X$ is Hausdorff, a net in $X$ converges to at most one point.
               show that $f$ is continuous, that is, if $V \in Y$ is open, then $f^{-1}(V)$ is open
               in $X$.
 
-              So let $V \in Y$ be open and suppose $(x_\alpha)$ is a net in $X$ converging to $x$.
+              So let $V \in Y$ be open and define $U = f^{-1}(V)$. Suppose $x \in U$; in order to
+              show that $U$ is open, we must be able to put a basis element around $x$. So by way
+              of contradition, suppose that there is no open neighborhood of $x$ contained in $U$,
+              i.e. $x \in \overline{X \setminus U}$. But by the previous problem, there is a net
+              $(x_\alpha)$ of points of $X \setminus U$ that converges to $x$.
+
+              But if that is so, no points of $\big(f(x_\alpha)\big)$ are in $V$, which
+              contradicts the hypothesis that for every net $(x_\alpha) \to x$ the net
+              $\big(f(x_\alpha)\big) \to f(x)$.
     \end{itemize}
 \end{proof}
 
