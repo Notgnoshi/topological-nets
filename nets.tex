@@ -294,7 +294,15 @@ Show that if $X$ is Hausdorff, a net in $X$ converges to at most one point.
 
 Show that if the net $(x_\alpha)$ converges to $x$, so does any subnet of $(x_\alpha)$.
 \begin{proof}
-    \todo{Prove.}
+    Let the net $(x_\alpha)$ given by $f: J \to X$ converge to $x$, and let $f \circ g : K \to X$,
+    denoted by $(x_a)$ for $a \in K$ be a subnet of $(x_\alpha)$. We wish to show that
+    $(x_a) \to x$, that is, for each neighborhood $U$ of $x$ there exists an $a \in K$ such that if
+    $a \preceq b \Rightarrow x_b \in U$.
+
+    So let $U$ be a neighborhood of $x$. Since $(x_\alpha) \to x$, there is an $\alpha \in J$ such
+    that if $\alpha \preceq \beta$, then $x_\beta \in U$. But $g(K)$ is cofinal in $J$, so there
+    exists a $b \in g(K)$ such that $\alpha \preceq b$. But then $x_b \in U$. Thus the subnet
+    $(x_a) \to x$.
 \end{proof}
 
 \section{Accumulation Points}
